@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { CounterComponent } from './counter/counter.component';
+import { HelloWorldComponent } from './hello-world/hello-world.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CounterComponent
+    CounterComponent,
+    HelloWorldComponent
   ],
   imports: [
     BrowserModule
