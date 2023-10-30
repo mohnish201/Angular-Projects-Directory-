@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'reverse-string';
+  title = 'Reverse-String';
+  
+  public str: string="";
+  public output=""
+
+  reverseString(){
+    const output = this.str.split('').reverse().join('');
+    this.output = output
+    this.str=""
+  }
+
 }

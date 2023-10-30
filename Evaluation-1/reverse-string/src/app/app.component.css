@@ -1,0 +1,33 @@
+
+main{
+    text-align: center;
+}
+
+input{
+    width: 300px;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: gainsboro;
+    border: none;
+}
+span{
+    color: red;
+}
+
+button{
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: dodgerblue;
+    color: white;
+    display: block;
+    border: none;
+    
+}
+
+div{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
