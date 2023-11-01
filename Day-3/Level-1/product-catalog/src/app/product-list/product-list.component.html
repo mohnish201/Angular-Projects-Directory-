@@ -66,8 +66,6 @@
       <label for="Chairs">Chairs</label>
     </div>
 
-    
-
     <!-- Brand -->
 
     <hr />
@@ -75,31 +73,61 @@
     <h2 class="text-md font-bold text-gray-700">BRANDS</h2>
 
     <div class="flex gap-3 items-center">
-        <input type="radio" value="ALL" [(ngModel)]="brand" name="ALL" (change)="filterByBrand('ALL')" />
-        <label for="">All</label>
-      </div>
+      <input
+        type="radio"
+        value="ALL"
+        [(ngModel)]="brand"
+        name="ALL"
+        (change)="filterByBrand('ALL')"
+      />
+      <label for="">All</label>
+    </div>
 
     <div class="flex gap-3 items-center">
-        <input type="radio" value="INTEX" [(ngModel)]="brand" name="INTEX" (change)="filterByBrand('INTEX')" />
-      
+      <input
+        type="radio"
+        value="INTEX"
+        [(ngModel)]="brand"
+        name="INTEX"
+        (change)="filterByBrand('INTEX')"
+      />
+
       <label for="">Intex</label>
     </div>
 
-    <div class="flex gap-3 items-center" >
-        <input type="radio" value="VIDAXL" [(ngModel)]="brand" name="VIDAXL" (change)="filterByBrand('VIDAXL')" />
+    <div class="flex gap-3 items-center">
+      <input
+        type="radio"
+        value="VIDAXL"
+        [(ngModel)]="brand"
+        name="VIDAXL"
+        (change)="filterByBrand('VIDAXL')"
+      />
 
       <label for="">Vidaxl</label>
     </div>
 
     <div class="flex gap-3 items-center">
-        <input type="radio" value="GYMAX" [(ngModel)]="brand" name="GYMAX" (change)="filterByBrand('GYMAX')" />
-     
+      <input
+        type="radio"
+        value="GYMAX"
+        [(ngModel)]="brand"
+        name="GYMAX"
+        (change)="filterByBrand('GYMAX')"
+      />
+
       <label for="">Gymax</label>
     </div>
 
     <div class="flex gap-3 items-center">
-        <input type="radio" value="COSTWAY" [(ngModel)]="brand" name="COSTWAY" (change)="filterByBrand('COSTWAY')" />
-     
+      <input
+        type="radio"
+        value="COSTWAY"
+        [(ngModel)]="brand"
+        name="COSTWAY"
+        (change)="filterByBrand('COSTWAY')"
+      />
+
       <label for="">COSTWAY</label>
     </div>
   </div>
@@ -110,8 +138,15 @@
   >
     <div class="pt-4" *ngFor="let el of filteredProducts">
       <div
-        class="w-72 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+      *ngIf="el.stock"
+        class="w-72 relative max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
       >
+        <span
+          *ngIf="el.badge === 'New'"
+          class="bg-yellow-400 blinking left-[85%] absolute text-white text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300"
+        >
+          New!</span
+        >
         <a href="#">
           <img
             class="p-5 rounded-t-lg"
@@ -196,7 +231,6 @@
             <a
               (click)="addToCart(el)"
               href="#"
-             
               class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >Add to cart</a
             >

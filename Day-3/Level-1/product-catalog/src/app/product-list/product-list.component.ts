@@ -11,10 +11,6 @@ export class ProductListComponent implements OnInit {
   products: Product[] = [];
   order: string = '';
   filteredProducts: Product[] = [];
-  // isSofas: boolean = false;
-  // isBeds: boolean = false;
-  // isChairs: boolean = false;
-  // isAll: boolean = false;
   category: string = '';
   brand: string = '';
   cartItems = this.cartServices.getCartItems();
