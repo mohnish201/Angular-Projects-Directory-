@@ -1,0 +1,25 @@
+
+
+<main class="flex flex-wrap justify-center gap-8">
+  <ng-container *ngIf="loading; else elseBlock">
+    <div *ngFor="let el of skeleton">
+      <!-- Display the loading indicator when loading is true -->
+      <app-skeleton></app-skeleton>
+    </div>
+  </ng-container>
+
+  <ng-template #elseBlock>
+    <div id="Product-list" *ngFor="let el of productList" class="">
+      <!-- Content to be displayed when not loading -->
+
+      <app-product-card
+        [id]="el.id"
+        [title]="el.title"
+        [price]="el.price"
+        [description]="el.description"
+        [category]="el.category"
+        [image]="el.image"
+      ></app-product-card>
+    </div>
+  </ng-template>
+</main>
