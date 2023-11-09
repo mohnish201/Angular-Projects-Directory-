@@ -1,0 +1,71 @@
+<main>
+  <form #userForm="ngForm">
+    <div>
+      <input
+        type="text"
+        placeholder="Search City Name"
+        [(ngModel)]="city"
+        id="city"
+        name="city"
+      />
+      <button (click)="OnClick()"> Search</button>
+
+      <!-- {{weather | json}} -->
+    </div>
+  </form>
+
+  <div id="weather">
+    <h1>{{ currentCity | uppercase }}</h1>
+
+    <div>
+      <p>{{ day | uppercase }}  {{ CurrentDate | date : "shortTime" }}</p>
+    </div>
+
+
+    <div [ngSwitch]="image" >
+      <div *ngSwitchCase="'clouds'">
+        <img  src="assets/clouds.png"  alt="clouds" />
+      </div>
+
+      <div *ngSwitchCase="'rain'">
+        <img src="assets/rain.png"  alt="rain">
+      </div>
+
+      <div *ngSwitchCase="'storm'">
+        <img src="assets/storm.png" alt="storm">
+      </div>
+
+      <div *ngSwitchCase="'sun'">
+        <img src="assets/sun.png" alt="sun">
+      </div>
+
+      <div *ngSwitchCase="'haze'">
+        <img src="assets/clouds.png" alt="clouds">
+      </div>
+
+
+      <div *ngSwitchDefault>
+        <img src="assets/clear.png" alt="clear">
+      </div>
+    </div>
+
+
+    <h1>{{ weather?.main?.temp }} <span>&#8451;</span></h1>
+    <p>{{ weather?.weather && weather.weather[0]?.description | uppercase }}</p>
+  </div>
+
+   <div id="hw">
+    <div id="humidity">
+        <h2>{{weather?.main?.humidity}} %</h2>
+        <p>Humidity</p>
+    </div>
+
+    <div>
+      <h2>{{weather?.wind.speed}} km/h</h2>
+      <p>Wind Speed</p>
+    </div>
+  
+   </div>
+</main>
+
+<!-- {{}} -->
