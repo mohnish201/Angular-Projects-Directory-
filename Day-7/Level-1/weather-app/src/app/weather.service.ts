@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from './../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -24,17 +25,22 @@ export class WeatherService {
     });
   }
 
-  getCurrentLocation(latitude: number, longitude: number):Observable<CurrentCity> {
+  getCurrentLocation(
+    latitude: number,
+    longitude: number
+  ): Observable<CurrentCity> {
     return this.http.get<CurrentCity>(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=dbd0bda333f7dad76148f509b213acad&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${environment.api_key}&units=metric`
     );
   }
 
-  getLocationByInput(city:string){
-    return this.http.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=dbd0bda333f7dad76148f509b213acad&units=metric`)
+  getLocationByInput(city: string) {
+    return this.http.get(
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${environment.api_key}&units=metric`
+    );
   }
 }
 
-export interface CurrentCity{
-   name:string
+export interface CurrentCity {
+  name: string;
 }
