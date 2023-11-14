@@ -1,0 +1,85 @@
+<h1>TODO APP</h1>
+
+<div>
+  <div id="sidebar">
+    <div id="addTodo">
+      <h3>Add Todo</h3>
+      <input
+        type="text"
+        name="title"
+        placeholder="Enter Title"
+        [(ngModel)]="title"
+      />
+      <input
+        type="text"
+        name="description"
+        placeholder="Enter Description"
+        [(ngModel)]="description"
+      />
+
+      <button (click)="addTodo()">Add Todo</button>
+    </div>
+  </div>
+
+  <div id="todoList">
+    <table>
+      <thead>
+        <th>S.NO</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Mark as Complete</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </thead>
+
+      <tbody *ngFor="let todo of todoList; index as i">
+        <tr>
+          <td>{{ todo.id }}</td>
+          <td id="title">
+            <ng-container *ngIf="!todo.editing; else showEditTitle">
+              {{ todo.title }}
+            </ng-container>
+            <ng-template #showEditTitle>
+              <input
+                type="text"
+                placeholder="Edit Title"
+                [(ngModel)]="todo.title"
+              />
+            </ng-template>
+          </td>
+          <td id="description">
+            <ng-container *ngIf="!todo.editing; else showEditDescription">
+              {{ todo.description }}
+            </ng-container>
+            <ng-template #showEditDescription>
+              <input
+                type="text"
+                placeholder="Edit Description"
+                [(ngModel)]="todo.description"
+              />
+            </ng-template>
+          </td>
+          <td>{{ todo.status ? "Completed" : "Pending" }}</td>
+          <td>
+            <button
+              [id]="todo.status ? 'pending' : 'completed'"
+              (click)="completed(todo.id)"
+            >
+              {{ todo.status ? "Mark as Pending" : "Mark as Completed" }}
+            </button>
+          </td>
+          <td>
+            <button id="edit" (click)="toggleEdit(todo)" *ngIf="!todo.editing">
+              Edit
+            </button>
+            <button id="save" *ngIf="todo.editing" (click)="saveTodo(todo)">
+              Save
+            </button>
+          </td>
+          <td><button id="delete" (click)="deleteTodo(i)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

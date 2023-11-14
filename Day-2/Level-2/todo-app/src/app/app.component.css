@@ -1,0 +1,97 @@
+* {
+  margin: auto;
+  text-align: center;
+}
+
+h1 {
+  margin: 20px;
+}
+
+#title,
+#description {
+  text-align: left;
+}
+
+#addTodo {
+  background-color: yellow;
+  width: max-content;
+  padding: 2px;
+  border-radius: 15px;
+  padding-top: 10px;
+}
+
+#addTodo > input {
+  text-align: left;
+  margin: 20px;
+}
+
+#addTodo > button {
+  margin: 20px;
+}
+
+#todoList{
+    margin: 20px;
+    border-radius: 15px;
+}
+
+th{
+    padding: 10px 15px;
+    width: max-content;
+    background-color: dodgerblue;
+    color: white;
+    font-size: 18px;
+    /* border-radius: 10px; */
+}
+
+
+#edit{
+    background-color: orange;
+    border-radius: 5px;
+    font-weight:bold;
+    border: none;
+    padding: 5px 10px;
+}
+
+#save{
+    background-color: dodgerblue;
+    border-radius: 5px;
+    font-weight:bold;
+    border: none;
+    padding: 5px 10px;
+}
+
+#delete{
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    font-weight:bold;
+    border: none;
+    padding: 5px 10px;
+}
+input{
+    border-radius: 10px;
+    padding: 5px;
+    text-align: left;
+}
+
+#pending{
+    background-color: orangered;
+    color: white;
+    border-radius: 5px;
+    font-weight:bold;
+    border: none;
+    padding: 5px 10px; 
+}
+
+#completed{
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    font-weight:bold;
+    border: none;
+    padding: 5px 10px;
+}
+
+td{
+    padding: 10px 15px;
+}
