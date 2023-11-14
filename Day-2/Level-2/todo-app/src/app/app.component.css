@@ -52,13 +52,16 @@ th{
     padding: 5px 10px;
 }
 
-#save{
+#save, #add{
     background-color: dodgerblue;
     border-radius: 5px;
     font-weight:bold;
     border: none;
     padding: 5px 10px;
+    color: white;
 }
+
+
 
 #delete{
     background-color: red;
