@@ -1,0 +1,46 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: dodgerblue;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+img{
+    width: 100px;
+    cursor: pointer;
+}
+
+#center{
+    display: flex;
+    gap: 40px;
+}
+
+#center > a:hover{
+    color: yellow;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+button{
+    outline-offset: 2px;
+    border: none;
+    padding: 5px 10px 5px 10px;
+    font-size: 15px;
+    font-weight:bold;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:active{
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}

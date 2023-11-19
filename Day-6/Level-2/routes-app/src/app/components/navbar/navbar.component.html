@@ -1,0 +1,30 @@
+<nav>
+    <div routerLink="/">
+        <img src="https://cdn.logo.com/hotlink-ok/logo-social.png" alt="logo">
+    </div>
+
+    <div id="center">
+        <a routerLink="/">Home</a>
+        <a routerLink="about">About</a>
+        <a routerLink="product">Product</a>
+        <a routerLink="/">Contact</a>
+    </div>
+
+
+    <div>
+
+        <div *ngIf="!isAuth; else elseBlock" routerLink="login">
+            <button type="button" (click)="login()">Login</button>
+
+        </div>
+      
+          
+          <ng-template #elseBlock>
+            <div routerLink="login">
+              <button type="button" (click)="logout()">Logout</button>
+            </div>
+          </ng-template>
+          
+
+    </div>
+</nav>
