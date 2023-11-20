@@ -1,0 +1,47 @@
+h1{
+    margin: auto;
+    text-align: center;
+}
+
+div{
+    margin: auto;
+    text-align: center;
+    border:2px solid ;
+    width: 40%;
+    margin-bottom: 20px;
+}
+input{
+    margin: 10px;
+    padding: 6px;
+    font-size: 15px;
+}
+
+button{
+    cursor: pointer;
+    margin:10px
+}
+
+#addTodo{
+    margin-bottom: 30px;
+}
+
+#delete{
+    background-color: red;
+    border: none;
+    padding: 8px;
+    color: white;
+}
+
+#status{
+    background-color: teal;
+    border: none;
+    padding: 8px;
+    color: white;
+}
+
+#submit{
+    background-color: dodgerblue;
+    border: none;
+    padding: 8px;
+    color: white;
+}

@@ -1,0 +1,16 @@
+
+<div id="addTodo">
+    <h2>Add Todo</h2>
+    <input type="text" placeholder="Enter Title" [(ngModel)]="title" name="title" >
+    <input type="text" placeholder="Enter Description" [(ngModel)]="description" name="description">
+     <button id="submit" (click)="addTodo()">Submit</button>
+</div>
+
+
+<h1>Todo List</h1>
+<div *ngFor="let todo of todoList; index as i ">
+    <h3>Title: {{todo.title}}</h3>
+    <p>Description: {{todo.description}}</p>
+    <button id="status" (click)="changeStatus(todo.id)">Status: {{todo.status ? "Completed": "Pending"}}</button>
+    <button id="delete" (click)="deleteTodo(i)">Delete</button>
+</div>
